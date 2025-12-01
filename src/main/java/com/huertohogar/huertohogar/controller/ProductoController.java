@@ -27,8 +27,8 @@ public class ProductoController {
     public ResponseEntity<Map<String, Object>> getAll(
             @RequestParam(required = false) String categoria,
             @RequestParam(required = false) String buscar,
-            @RequestParam(required = false) Boolean activos) {
-        List<ProductoDTO> productos = productoService.findAll(categoria, buscar, activos);
+            @RequestParam(required = false, defaultValue = "false") Boolean soloActivos) {
+        List<ProductoDTO> productos = productoService.findAll(categoria, buscar, soloActivos);
         return ResponseEntity.ok(Map.of(
                 "success", true,
                 "productos", productos

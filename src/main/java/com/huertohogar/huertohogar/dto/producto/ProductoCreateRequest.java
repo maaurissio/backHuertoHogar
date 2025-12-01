@@ -18,8 +18,6 @@ public class ProductoCreateRequest {
     @NotBlank(message = "El nombre es requerido")
     private String nombre;
     
-    private String descripcion;
-    
     @NotNull(message = "El precio es requerido")
     @Positive(message = "El precio debe ser positivo")
     private BigDecimal precio;
@@ -28,10 +26,10 @@ public class ProductoCreateRequest {
     @Min(value = 0, message = "El stock no puede ser negativo")
     private Integer stock;
     
-    private String imagen;
-    
     @NotBlank(message = "La categoría es requerida")
     private String categoria;
     
-    private String peso;
+    private String descripcion;
+    
+    private String imagen;
 }

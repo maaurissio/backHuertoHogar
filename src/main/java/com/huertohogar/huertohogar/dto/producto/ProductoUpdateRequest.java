@@ -1,6 +1,5 @@
 package com.huertohogar.huertohogar.dto.producto;
 
-import com.huertohogar.huertohogar.model.enums.EstadoActivo;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
@@ -14,8 +13,9 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 public class ProductoUpdateRequest {
     
+    private String codigo;
+    
     private String nombre;
-    private String descripcion;
     
     @Positive(message = "El precio debe ser positivo")
     private BigDecimal precio;
@@ -23,8 +23,11 @@ public class ProductoUpdateRequest {
     @Min(value = 0, message = "El stock no puede ser negativo")
     private Integer stock;
     
-    private String imagen;
     private String categoria;
-    private EstadoActivo isActivo;
-    private String peso;
+    
+    private String descripcion;
+    
+    private String imagen;
+    
+    private String isActivo;  // Acepta "Activo" o "Inactivo"
 }
